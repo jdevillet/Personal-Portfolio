@@ -112,6 +112,7 @@ header {
 nav {
   display: flex;
   justify-content: space-between;
+  align-items: center;
 }
 
 .logo {
@@ -122,15 +123,23 @@ nav {
 nav ul {
   display: flex;
   align-items: center;
+  padding: 00 1rem;
+  width: 100%;
+  justify-content: space-around;
+  max-width: 35rem;
+}
+
+.social {
+  font-size: 2rem;
 }
 
 nav ul li {
-  margin-inline: 0.1rem;
+  /* margin-inline: 0.1rem; */
   border-radius: var(--border-radius);
   transition: var(--transition);
 }
 
-nav ul li:hover {
+.nav-link:hover {
   background: var(--accent-clr);
   color: var(--accent-ft-clr);
 }
@@ -158,6 +167,7 @@ nav ul li a {
   align-items: center;
   justify-content: center;
   text-align: center;
+  margin: 1rem 0;
 }
 
 .title {
@@ -175,7 +185,7 @@ nav ul li a {
 .my-stuff {
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
   justify-content: center;
   justify-items: center;
   max-width: 100rem;
@@ -284,4 +294,36 @@ nav ul li a {
 
 footer {
   text-align: center;
+}
+
+/* Media Queries */
+@media screen and (max-width: 62rem) {
+  .title-container {
+    min-height: 40vh;
+  }
+
+  .my-stuff,
+  .reviews {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+  }
+}
+
+@media screen and (max-width: 33rem) {
+  nav {
+    flex-direction: column;
+  }
+
+  nav ul {
+    flex-direction: column;
+    margin-block: 1rem;
+    gap: 1rem;
+  }
+
+  .nav-link {
+    width: 100%;
+    max-width: 8rem;
+    text-align: center;
+  }
 }
