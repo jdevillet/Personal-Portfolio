@@ -234,7 +234,7 @@ nav ul li a {
 }
 
 .overall:hover {
-  transform: scale(1.02);
+  transform: scale(1.01);
 }
 
 .overall h3 {
@@ -258,13 +258,16 @@ nav ul li a {
 }
 
 .project-link {
-  padding: 0.5rem 0;
-  border-radius: var(--border-radius);
-  transition: var(--transition);
+  padding: 0.5rem;
+  border-radius: 0.4rem;
+  border-color: var(--accent-clr-dark);
+  color: var(--accent-ft-clr);
+  transition: border 200ms, box-shadow 200ms ease-in-out;
 }
 
 .project-link:hover {
-  box-shadow: 0 0 6px 0 var(--background-clr);
+  box-shadow: inset -2rem 0 0 0 var(--accent-clr-dark);
+  border-bottom: 0.2rem solid var(--accent-clr-dark);
 }
 
 .experience p {
@@ -376,7 +379,7 @@ footer {
 
 @media screen and (max-width: 62rem) {
   .title-container {
-    min-height: 40vh;
+    min-height: 30vh;
   }
 
   .cards,
@@ -402,5 +405,9 @@ footer {
     width: 100%;
     max-width: 8rem;
     text-align: center;
+  }
+
+  .title-container {
+    min-height: 20vh;
   }
 }
