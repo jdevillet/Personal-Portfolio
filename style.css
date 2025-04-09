@@ -8,12 +8,18 @@
   --ft-clr: rgb(13, 13, 13);
   --light-ft-clr: rgba(13, 13, 13, 0.517);
   --accent-clr: rgb(10, 142, 128);
+  --accent-clr-dark: rgb(9, 127, 115);
   --accent-ft-clr: rgb(243, 243, 243);
   --shadow-color: 0deg 0% 62%;
+  --shadow-color-btn: 174 90% 18%;
   --shadow-box: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
     0.8px 1.6px 2px -0.8px hsl(var(--shadow-color) / 0.36),
     2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color) / 0.36),
     5px 10px 12.6px -2.5px hsl(var(--shadow-color) / 0.36);
+  --shadow-box-btn: 0.3px 0.5px 0.7px hsl(var(--shadow-color-btn) / 0.36),
+    0.8px 1.6px 2px -0.8px hsl(var(--shadow-color-btn) / 0.36),
+    2.1px 4.1px 5.2px -1.7px hsl(var(--shadow-color-btn) / 0.36),
+    5px 10px 12.6px -2.5px hsl(var(--shadow-color-btn) / 0.36);
   --ft-weight-thin: 100;
   --ft-weight-bold: 900;
   --border-radius: 1.5rem;
@@ -106,6 +112,18 @@ h6 {
   letter-spacing: 0.1rem;
 }
 
+.link-btn {
+  border-radius: var(--border-radius);
+  text-align: center;
+  background-color: var(--accent-clr-dark);
+  padding: 0.5rem;
+  box-shadow: var(--shadow-box-btn);
+  transition: var(--transition);
+}
+
+.link-btn:hover {
+  transform: rotate(4deg);
+}
 /* Header */
 
 header {
@@ -138,7 +156,6 @@ nav ul {
 }
 
 nav ul li {
-  /* margin-inline: 0.1rem; */
   border-radius: var(--border-radius);
   transition: var(--transition);
 }
@@ -320,13 +337,43 @@ footer {
 .card {
   width: 100%;
   max-width: 30rem;
-  border: 1px solid black;
   border-radius: var(--border-radius);
+  background-color: var(--accent-clr);
+  box-shadow: var(--shadow-box);
   padding: 2rem;
-  height: 25rem;
+  position: relative;
+  display: flex;
+  flex-direction: column;
+  color: var(--accent-ft-clr);
+  justify-content: space-between;
+  transition: var(--transition);
+}
+
+.card:hover {
+  transform: translateY(-0.2rem);
+}
+
+.card img {
+  position: absolute;
+  top: -5%;
+  left: 50%;
+  transform: translateX(-50%);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-box);
+  width: 90%;
+  transition: var(--transition);
+}
+
+.card h2 {
+  margin-top: 65%;
+}
+
+.card a {
+  max-width: 60%;
 }
 
 /* Media Queries */
+
 @media screen and (max-width: 62rem) {
   .title-container {
     min-height: 40vh;
