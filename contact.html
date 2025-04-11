@@ -34,6 +34,10 @@
         <li class="nav-link"><a href="/projects.html">Projects</a></li>
         <li class="nav-link"><a href="/articles.html">Articles</a></li>
         <li class="nav-link active"><a href="/contact.html">Contact</a></li>
+        <li> <button class="toggle-theme" onclick="toggleTheme()">
+            <i class="fa-solid fa-sun" id="sun_icon"></i>
+            <i class="fa-solid fa-moon" id='moon_icon' style="display: none;"></i>
+          </button></li>
       </ul>
       <a class="social" href="https://github.com/jdevillet"><i class="fa-brands fa-github"></i></a>
     </nav>
@@ -66,7 +70,7 @@
           <textarea id="message" name="message" placeholder="I just wanted to say..." required></textarea>
         </div>
 
-        <input type="submit" class="button link-btn" value="Send Message">
+        <input type="submit" class="link-btn" value="Send Message">
       </form>
     </div>
   </div>
@@ -74,7 +78,7 @@
   <footer>
     <p>&copy; all rights reserved 2025</p>
   </footer>
-
+  <script src="script.js"></script>
 </body>
 
 </html>

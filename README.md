@@ -1,12 +1,14 @@
-Personal Portfolio
+# Personal Portfolio
 
-# Goal
+![Personal Portfolio](/assets/img/screenshot.png)
+
+## Goal
 
 Add styles to previous project. Focus on layout and responsive design.
 
-https://roadmap.sh/projects/basic-html-website
+https://roadmap.sh/projects/portfolio-website
 
-# Requirements
+## Requirements
 
 Requirements
 Fully styled and responsive website
