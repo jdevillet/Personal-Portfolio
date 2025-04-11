@@ -8,8 +8,13 @@
   --ft-clr: rgb(13, 13, 13);
   --light-ft-clr: rgba(13, 13, 13, 0.517);
   --accent-clr: rgb(10, 142, 128);
-  --accent-clr-dark: rgb(9, 127, 115);
+  --accent-clr-dark: rgb(7, 106, 96);
   --accent-ft-clr: rgb(243, 243, 243);
+  --card-gradient: linear-gradient(
+    90deg,
+    rgb(10, 142, 128),
+    rgb(9, 127, 115) 100%
+  );
   --shadow-color: 0deg 0% 62%;
   --shadow-color-btn: 174 90% 18%;
   --shadow-box: 0.3px 0.5px 0.7px hsl(var(--shadow-color) / 0.36),
@@ -56,6 +61,11 @@ body {
   color: var(--ft-clr);
   padding: 1rem;
   background: var(--background-clr);
+
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+  margin: 0;
 }
 
 img,
@@ -113,16 +123,32 @@ h6 {
 }
 
 .link-btn {
+  border: none;
   border-radius: var(--border-radius);
   text-align: center;
   background-color: var(--accent-clr-dark);
   padding: 0.5rem;
   box-shadow: var(--shadow-box-btn);
   transition: var(--transition);
+  cursor: pointer;
+  color: var(--accent-ft-clr);
 }
 
 .link-btn:hover {
-  transform: rotate(4deg);
+  transform: scale(1.03);
+}
+
+.page-wrapper {
+  max-width: 80%;
+  margin: 0 auto;
+}
+
+.projects {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  width: 100%;
+  /* margin: 0 auto; */
 }
 /* Header */
 
@@ -206,10 +232,10 @@ nav ul li a {
 
 /* my-stuff | main */
 
-.cards {
+.card-wrapper {
   display: grid;
   grid-auto-rows: auto;
-  grid-template-columns: repeat(auto-fit, minmax(16rem, 1fr));
+  grid-template-columns: repeat(auto-fit, minmax(14rem, 1fr));
   justify-content: center;
   justify-items: center;
   max-width: 100rem;
@@ -220,6 +246,7 @@ nav ul li a {
 .overall {
   border-radius: var(--border-radius);
   background: var(--accent-clr);
+  background: var(--card-gradient);
   color: var(--accent-ft-clr);
   min-width: 15rem;
   max-width: 30rem;
@@ -262,11 +289,12 @@ nav ul li a {
   border-radius: 0.4rem;
   border-color: var(--accent-clr-dark);
   color: var(--accent-ft-clr);
-  transition: border 200ms, box-shadow 200ms ease-in-out;
+  transition: border 200ms, box-shadow 200ms linear;
 }
 
 .project-link:hover {
   box-shadow: inset -2rem 0 0 0 var(--accent-clr-dark);
+  /* box-shadow: inset -2rem 0 0 0 black; */
   border-bottom: 0.2rem solid var(--accent-clr-dark);
 }
 
@@ -319,29 +347,18 @@ nav ul li a {
   text-align: end;
 }
 
-footer {
-  text-align: center;
-  margin-top: auto;
-}
-
 /* Projects */
-.projects {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  max-width: 80rem;
-  margin: 0 auto;
-}
 
-.projects .cards {
+.projects .card-wrapper {
   grid-template-columns: repeat(auto-fit, minmax(20rem, 1fr));
   width: 100%;
 }
 .card {
   width: 100%;
-  max-width: 30rem;
+  max-width: 25rem;
   border-radius: var(--border-radius);
   background-color: var(--accent-clr);
+  background: var(--card-gradient);
   box-shadow: var(--shadow-box);
   padding: 2rem;
   position: relative;
@@ -356,7 +373,7 @@ footer {
   transform: translateY(-0.2rem);
 }
 
-.card img {
+.card__screenshot {
   position: absolute;
   top: -5%;
   left: 50%;
@@ -375,6 +392,182 @@ footer {
   max-width: 60%;
 }
 
+/* Articles */
+
+.articles .card {
+  max-height: 30rem;
+  max-width: 18rem;
+  height: 100%;
+  padding: 0;
+  cursor: pointer;
+}
+
+.card-content {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+  justify-content: space-between;
+  padding: 0 1rem 1rem 1rem;
+}
+
+.card__header {
+  max-height: 10rem;
+}
+
+.image {
+  min-height: 10rem;
+  width: 100%;
+  border-radius: var(--border-radius);
+}
+
+.image1 {
+  background: url(./assets/img/mexcan_food.jpg) center/cover;
+}
+.image2 {
+  background: url(./assets/img/crypto.jpg) center/cover;
+}
+.image3 {
+  background: url(./assets/img/marathon.jpg) center/cover;
+}
+
+.card__body {
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+  font-size: 1rem;
+  padding-bottom: 1rem;
+}
+
+.card__body p {
+  display: block;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  max-height: 4.5rem;
+}
+
+.tag {
+  align-self: flex-start;
+  padding: 0.25rem 0.75rem;
+  margin: 0.7rem 0;
+  border-radius: 1rem;
+  font-size: 1rem;
+  color: var(--accent-ft-clr);
+}
+
+.tag-food {
+  background: rgb(174, 75, 14);
+  background: linear-gradient(
+    90deg,
+    rgba(174, 75, 14, 1) 0%,
+    rgba(176, 122, 88, 1) 100%
+  );
+}
+
+.tag-tech {
+  background: rgb(130, 32, 179);
+  background: linear-gradient(
+    90deg,
+    rgba(130, 32, 179, 1) 0%,
+    rgba(157, 103, 184, 1) 100%
+  );
+}
+
+.tag-sport {
+  background: rgb(41, 89, 171);
+  background: linear-gradient(
+    90deg,
+    rgba(48, 89, 171, 1) 0%,
+    rgb(33, 133, 176) 100%
+  );
+}
+
+.author {
+  display: grid;
+  grid-template-columns: 20% 80%;
+}
+
+.author img {
+  border-radius: 99rem;
+}
+
+.author__info {
+  font-size: 0.9rem;
+  padding-left: 0.5rem;
+}
+/* Contact */
+
+form {
+  max-width: 50rem;
+  height: 100%;
+  padding: 2rem;
+  background: var(--accent-clr);
+  background: var(--card-gradient);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow-box);
+  display: grid;
+  margin: 0 auto;
+  grid-template-columns: 50% 50%;
+  grid-template-rows: 7rem 10rem;
+  grid-template-areas:
+    "Na Em"
+    "Me Me"
+    "Btn Btn";
+  color: var(--accent-ft-clr);
+}
+
+input[type="text"],
+input[type="email"],
+textarea,
+input:focus {
+  background: var(--background-clr);
+  border-radius: var(--border-radius);
+  border: none;
+  width: 100%;
+  margin: 0.5rem 0 0 0;
+  padding: 0 0 0 1rem;
+  font-size: 1rem;
+  outline: none;
+  min-height: 3rem;
+}
+
+textarea::-webkit-scrollbar {
+  display: none;
+}
+.form-wrapper {
+  padding: 0.6rem;
+}
+
+.name {
+  grid-area: Na;
+}
+
+.email {
+  grid-area: Em;
+}
+
+.message {
+  grid-area: Me;
+}
+
+.message textarea {
+  resize: none;
+  min-height: 5rem;
+}
+
+.button {
+  max-width: 13rem;
+  margin: 0 auto;
+  width: 100%;
+  grid-area: Btn;
+}
+
+/* footer */
+
+footer {
+  text-align: center;
+  /* margin-top: auto; */
+}
+
 /* Media Queries */
 
 @media screen and (max-width: 62rem) {
@@ -382,11 +575,25 @@ footer {
     min-height: 30vh;
   }
 
-  .cards,
+  .card-wrapper,
   .reviews {
     display: flex;
     flex-direction: column;
     align-items: center;
+  }
+  .articles .card {
+    max-width: 25rem;
+  }
+}
+
+@media screen and (max-width: 45rem) {
+  form {
+    grid-template-rows: auto;
+    grid-template-areas:
+      "Na Na"
+      "Em Em"
+      "Me Me"
+      "Btn Btn";
   }
 }
 

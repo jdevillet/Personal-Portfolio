@@ -39,20 +39,36 @@
     </nav>
   </header>
 
-  <div class="contact">
-    <h1>Contact Me</h1>
-    <form action="submit" method="POST">
-      <label for="name">Name:</label>
-      <input type="text" id="name" name="name" placeholder="Jean" required>
+  <div class="Contact page-wrapper">
 
-      <label for="email">Email:</label>
-      <input type="email" id="email" name="email" placeholder="jean@mail.com" required>
 
-      <label for="message">Message:</label>
-      <textarea id="message" name="message" rows="5" placeholder="I just wanted to say..." required></textarea>
+    <div class="title-container low-space">
+      <div class="title">
+        <h1>Contact Me</h1>
+      </div>
+    </div>
 
-      <button type="submit">Send Message</button>
-    </form>
+    <div class="form-wrapper">
+
+      <form action="submit" method="POST">
+        <div class="name form-wrapper">
+          <label for="name">Name:</label>
+          <input type="text" id="name" name="name" placeholder="Jean" required>
+        </div>
+
+        <div class="email form-wrapper">
+          <label for="email">Email:</label>
+          <input type="email" id="email" name="email" placeholder="jean@mail.com" required>
+        </div>
+
+        <div class="message form-wrapper">
+          <label for="message">Message:</label>
+          <textarea id="message" name="message" placeholder="I just wanted to say..." required></textarea>
+        </div>
+
+        <input type="submit" class="button link-btn" value="Send Message">
+      </form>
+    </div>
   </div>
 
   <footer>
